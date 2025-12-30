@@ -1,2 +1,6 @@
 *.swp
 *.swo
+pythermalfunctions.egg-info/
+__pycache__/
+*.so
+*.mod
