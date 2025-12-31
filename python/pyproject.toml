@@ -10,7 +10,7 @@ requires-python = ">=3.6"
 authors = [
   { name = "Thomas Biekötter", email = "thomas.biekoetter@desy.de" }
 ]
-dependencies = ["numpy"]
+dependencies = ["numpy", "cosmoTransitions"]
 urls = { Homepage = "https://github.com/thomasbiekoetter/thermalfunctions" }
 
 [tools.setuptools]
