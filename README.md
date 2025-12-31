@@ -3,6 +3,9 @@
 **thermalfunctions** is a Fortran package (built with **fpm**) that computes **thermal one-loop functions** in **4D finite-temperature quantum field theory**.
 It provides both **exact numerical evaluation** and **fast spline-interpolated approximations** for bosonic and fermionic thermal functions.
 
+In addition to the native Fortran API, **thermalfunctions** also provides a **Python interface**, allowing the core routines to be called directly from Python.
+For details on the Python bindings and usage examples, see the `python/` directory, which contains an additional README with full instructions.
+
 ---
 
 ## Features
@@ -13,10 +16,10 @@ It provides both **exact numerical evaluation** and **fast spline-interpolated a
 
   1. **Exact mode**: direct numerical integration using **QUADPACK**
   2. **Spline mode**: cubic spline interpolation of precomputed exact values
-* Modern Fortran with kind-safe floating-point precision
-* Fully compatible with the **Fortran Package Manager (fpm)**
+* **Python interface** for calling the thermal functions from Python
 
 ---
+
 
 ## Installation
 
