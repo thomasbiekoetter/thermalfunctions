@@ -1,13 +1,13 @@
 module thermalfunctions__jspline
 
   use thermalfunctions__kinds, only : wp
-  use evortran__util_interp_spline, only :  &
-    spline_construct
-  use evortran__util_interp_spline, only :  &
-    spline_getval
-  use evortran__util_numpy, only : logspace
+  use thermalfunctions__numpy, only : logspace
   use thermalfunctions__jexact, only : Jb
   use thermalfunctions__jexact, only : Jf
+  use cubicsplines__interp, only :  &
+    spline_construct
+  use cubicsplines__interp, only :  &
+    spline_getval
 
   private
 

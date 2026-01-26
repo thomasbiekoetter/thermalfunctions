@@ -22,6 +22,6 @@ implicit-external = false
 source-form = "free"
 [dependencies]
 openmp = "*"
-evortran = { git = "https://gitlab.com/thomas.biekoetter/evortran.git" }
+cubicsplines = { git = "https://github.com/thomasbiekoetter/cubicsplines.git" }
 quadpack = { git = "https://github.com/thomasbiekoetter/quadpack.git" }
 
