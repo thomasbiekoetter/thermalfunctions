@@ -27,7 +27,13 @@ pip install patchelf
 
 ## Installation
 
-From the root directory of the project, run:
+From the root directory of the project, run the following command to build the Fortran library:
+
+```
+fpm build --flag="-fPIC"
+```
+
+The navigate to the python subfolder and run the Makefile:
 
 ```
 make wrapper

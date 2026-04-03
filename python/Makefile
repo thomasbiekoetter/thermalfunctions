@@ -2,7 +2,7 @@ PC = python
 FC = gfortran
 
 wrapper:
-	fpm install --compiler=$(FC) --prefix=./pythermalfunctions/
+	fpm install --compiler=$(FC) --flag="-fPIC" --prefix=./pythermalfunctions/
 	cd pythermalfunctions/lib && patchelf --set-rpath '$$ORIGIN' libthermalfunctions.so
 	cd pythermalfunctions/lib && patchelf --set-rpath '$$ORIGIN' libcubicsplines.so
 	cd pythermalfunctions/lib && patchelf --set-rpath '$$ORIGIN' liberror-handling.so
