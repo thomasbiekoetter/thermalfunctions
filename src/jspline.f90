@@ -39,6 +39,8 @@ module thermalfunctions__jspline
   public :: Jf_spline
   public :: dJb_spline
   public :: dJf_spline
+  public :: d2Jb_spline
+  public :: d2Jf_spline
 
 contains
 
@@ -70,6 +72,20 @@ contains
 
   end function dJb_spline
 
+  function d2Jb_spline(x) result(y)
+
+    real(wp), intent(in) :: x
+    real(wp) :: y
+
+    if (.not. is_init) then
+      call init_splines(xsq_min, xsq_max, Ninit)
+      is_init = .true.
+    end if
+
+    y = spline_getval(x, yb, fb, b_Jb, c_Jb, d_Jb, Nb, derivative=2)
+
+  end function d2Jb_spline
+
   function Jf_spline(x) result(y)
 
     real(wp), intent(in) :: x
@@ -97,6 +113,20 @@ contains
     y = spline_getval(x, yf, ff, b_Jf, c_Jf, d_Jf, Nf, derivative=1)
 
   end function dJf_spline
+
+  function d2Jf_spline(x) result(y)
+
+    real(wp), intent(in) :: x
+    real(wp) :: y
+
+    if (.not. is_init) then
+      call init_splines(xsq_min, xsq_max, Ninit)
+      is_init = .true.
+    end if
+
+    y = spline_getval(x, yf, ff, b_Jf, c_Jf, d_Jf, Nf, derivative=2)
+
+  end function d2Jf_spline
 
   subroutine init_splines(a, b, N)
 
