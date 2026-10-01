@@ -35,3 +35,29 @@ def Jf_spline(ysq):
     res = ctypes.c_double()
     Jf_spline_c(ysq, ctypes.byref(res))
     return res.value
+
+dJb_spline_c = getattr(
+    thermalfunctions_c,
+    "dJb_spline_c")
+dJb_spline_c.argtypes = [
+    ctypes.c_double,
+    ctypes.POINTER(ctypes.c_double)
+]
+dJb_spline_c.restype = None
+def dJb_spline(ysq):
+    res = ctypes.c_double()
+    dJb_spline_c(ysq, ctypes.byref(res))
+    return res.value
+
+dJf_spline_c = getattr(
+    thermalfunctions_c,
+    "dJf_spline_c")
+dJf_spline_c.argtypes = [
+    ctypes.c_double,
+    ctypes.POINTER(ctypes.c_double)
+]
+dJf_spline_c.restype = None
+def dJf_spline(ysq):
+    res = ctypes.c_double()
+    dJf_spline_c(ysq, ctypes.byref(res))
+    return res.value
