@@ -5,7 +5,6 @@ wrapper:
 	fpm install --compiler=$(FC) --flag="-fPIC" --prefix=./pythermalfunctions/
 	cd pythermalfunctions/lib && patchelf --set-rpath '$$ORIGIN' libthermalfunctions.so
 	cd pythermalfunctions/lib && patchelf --set-rpath '$$ORIGIN' libcubicsplines.so
-	cd pythermalfunctions/lib && patchelf --set-rpath '$$ORIGIN' liberror-handling.so
 	$(PC) -m pip install -e .
 
 clean:
