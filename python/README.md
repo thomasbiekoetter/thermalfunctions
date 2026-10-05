@@ -76,6 +76,28 @@ res_spline = Jb_spline(ysq)
 
 All functions take a single argument `ysq` corresponding to the squared mass-to-temperature ratio.
 
+### Torch interface
+
+The module `pythermalfunctions.jtorch` provides the spline functions as
+differentiable torch functions acting element-wise on tensors of `ysq`
+(requires `torch`, not installed by default):
+
+```
+import torch
+from pythermalfunctions.jtorch import Jb, Jf
+
+ysq = torch.tensor([0.5, 4.0], dtype=torch.float64, requires_grad=True)
+y = Jb(ysq)
+dy, = torch.autograd.grad(y.sum(), ysq, create_graph=True)  # dJb
+d2y, = torch.autograd.grad(dy.sum(), ysq)                    # d2Jb
+```
+
+Derivatives are supplied analytically by the spline derivatives, so
+gradients and Hessians (e.g. of a thermal effective potential) work
+through autograd. Third derivatives are not available. The evaluation
+runs on the CPU in double precision; results are returned with the
+dtype and device of the input.
+
 ---
 
 ## Tests and Benchmarks

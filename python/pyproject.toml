@@ -11,6 +11,7 @@ authors = [
   { name = "Thomas Biekötter", email = "thomas.biekoetter@desy.de" }
 ]
 dependencies = ["numpy", "cosmoTransitions"]
+optional-dependencies = { torch = ["torch"] }
 urls = { Homepage = "https://github.com/thomasbiekoetter/thermalfunctions" }
 
 [tools.setuptools]
