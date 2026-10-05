@@ -95,18 +95,3 @@ def Jb(ysq):
 def Jf(ysq):
     return _Jf.apply(_as_tensor(ysq))
 
-
-def dJb(ysq):
-    return _dJb.apply(_as_tensor(ysq))
-
-
-def dJf(ysq):
-    return _dJf.apply(_as_tensor(ysq))
-
-
-def d2Jb(ysq):
-    return _d2Jb.apply(_as_tensor(ysq))
-
-
-def d2Jf(ysq):
-    return _d2Jf.apply(_as_tensor(ysq))

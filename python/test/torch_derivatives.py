@@ -8,14 +8,14 @@ from pythermalfunctions.jspline import d2Jb_spline
 from pythermalfunctions.jspline import d2Jf_spline
 from pythermalfunctions.jtorch import Jb
 from pythermalfunctions.jtorch import Jf
-from pythermalfunctions.jtorch import dJb
-from pythermalfunctions.jtorch import dJf
+from pythermalfunctions.jtorch import _dJb
+from pythermalfunctions.jtorch import _dJf
 
 
 x_np = np.linspace(1e-2, 10, 50)
 
 for J, dJ, J_s, dJ_s, d2J_s, l in zip(
-        [Jb, Jf], [dJb, dJf],
+        [Jb, Jf], [_dJb.apply, _dJf.apply],
         [Jb_spline, Jf_spline],
         [dJb_spline, dJf_spline],
         [d2Jb_spline, d2Jf_spline],
